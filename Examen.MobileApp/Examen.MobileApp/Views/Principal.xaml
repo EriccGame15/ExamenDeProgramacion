@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.MobileApp.Views.Principal"
+             xmlns:Models="clr-namespace:Examen.MobileApp.Models"
+             xmlns:ViewModels="clr-namespace:Examen.MobileApp.ViewModels"
+             x:DataType="ViewModels:ProductViewModel"
+             Title="Catálogo de productos">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="listaProductos" ItemsSource="{Binding ListaProductos}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="Models:Product">
+                        <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="Title"></Label>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
